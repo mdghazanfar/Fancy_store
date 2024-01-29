@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-import React from "react";
+import React from 'react';
 import {
   Drawer,
   AppBar,
@@ -24,49 +24,49 @@ import {
   ListItem,
   ListItemText,
   Box,
-} from "@mui/material";
+} from '@mui/material';
 
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   NavLink,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 //Import Pages
-import Home from "../../pages/Home";
-import Products from "../../pages/Products";
-import Orders from "../../pages/Orders";
-import OrderDetails from "../../pages/OrderDetails";
-import NotFound from "../../pages/NotFound";
+import Home from '../../pages/Home';
+import Products from '../../pages/Products';
+import Orders from '../../pages/Orders';
+import OrderDetails from '../../pages/OrderDetails';
+import NotFound from '../../pages/NotFound';
 
 const drawerWidth = 200;
 
 export default function ClippedDrawer() {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: 'flex' }}>
       <Router>
         <CssBaseline />
         <AppBar
-          position="fixed"
+          position='fixed'
           sx={{
             zIndex: (theme) => theme.zIndex.drawer + 1,
           }}
         >
           <Toolbar>
-            <Typography variant="h6" noWrap>
+            <Typography variant='h6' noWrap>
               Fancy Store
             </Typography>
           </Toolbar>
         </AppBar>
         <Drawer
-          variant="permanent"
+          variant='permanent'
           sx={{
             width: drawerWidth,
             flexShrink: 0,
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
-              boxSizing: "border-box",
+              boxSizing: 'border-box',
             },
           }}
         >
@@ -75,46 +75,46 @@ export default function ClippedDrawer() {
             <ListItem
               component={NavLink}
               exact
-              sx={{ color: "rgba(0, 0, 0, 0.54)" }}
-              activeClassName="Mui-selected"
-              to="/"
+              sx={{ color: 'rgba(0, 0, 0, 0.54)' }}
+              activeClassName='Mui-selected'
+              to='/'
             >
-              <ListItemText primary="Home" />
-            </ListItem>{" "}
+              <ListItemText primary='Home' />
+            </ListItem>{' '}
             <ListItem
               component={NavLink}
               exact
-              sx={{ color: "rgba(0, 0, 0, 0.54)" }}
-              activeClassName="Mui-selected"
-              to="/products"
+              sx={{ color: 'rgba(0, 0, 0, 0.54)' }}
+              activeClassName='Mui-selected'
+              to='/products'
             >
-              <ListItemText primary="Products" />
-            </ListItem>{" "}
+              <ListItemText primary='Products' />
+            </ListItem>{' '}
             <ListItem
               component={NavLink}
-              sx={{ color: "rgba(0, 0, 0, 0.54)" }}
-              activeClassName="Mui-selected"
-              to="/orders"
+              sx={{ color: 'rgba(0, 0, 0, 0.54)' }}
+              activeClassName='Mui-selected'
+              to='/orders'
             >
-              <ListItemText primary="Orders" />
+              <ListItemText primary='Orders' />
             </ListItem>
           </List>
         </Drawer>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
           <Switch>
-            <Route exact path="/">
+            <Route exact path='/'>
               <Home />
             </Route>
-            <Route exact path="/products">
+            <Route exact path='/products'>
               <Products />
             </Route>
-            <Route path="/orders/:id">
+            {/* <Route path="/orders/:id">
               <OrderDetails />
             </Route>
             <Route path="/orders">
               <Orders />
-            </Route>
+            </Route> */}
             <Route>
               <NotFound />
             </Route>
